@@ -4,7 +4,7 @@ nav {
     width: 100%;
     position: fixed;
     top: 0;
-    background: #fff5f2;
+    background: #ff5200;
     box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.22);
     z-index: 22;
   }
@@ -31,7 +31,7 @@ nav {
     font-size: 18px;
     padding: 7px 13px;
     text-decoration: none;
-    color: var(--clr-secondary);
+    color: #ffffff;
   }
   
   .menu a.active,
@@ -56,7 +56,7 @@ nav {
 
   .logo a{
     text-decoration: none!important;
-    color: red;
+    color: #ffffff;
   }
   .logo a:hover{
     border-bottom: none !important;

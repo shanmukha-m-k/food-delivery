@@ -31,8 +31,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/ionicons/dist/scss/ionicons.scss"
-            ],
+              "node_modules/boxicons/css/boxicons.min.css"
+                        ],
             "scripts": []
           },
           "configurations": {
