@@ -1,46 +1,41 @@
-/*search box css start here*/
-.search-sec{
-    padding: 2rem;
-}
-.search-slt{
-    display: block;
-    width: 100%;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: #55595c;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    height: calc(3rem + 2px) !important;
-    border-radius:0;
-}
-.wrn-btn{
-    width: 100%;
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: capitalize;
-    height: calc(3rem + 2px) !important;
-    border-radius:0;
-}
-@media (min-width: 992px){
-    .search-sec{
-        position: relative;
-        top: -114px;
-        background: rgba(26, 70, 104, 0.51);
-    }
+/* Hero Section */
+#hero-section {
+  background: #ff520082;
+  margin-top: 60px;
 }
 
-@media (max-width: 992px){
-    .search-sec{
-        background: #1A4668;
-    }
+.text,
+.visual {
+  width: 50%;
 }
+
+.text {
+  margin: 0 20px;
+}
+
+.visual img {
+  width: 80%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+#hero-section .text {
+  margin-left: 30px;
+}
+
+#hero-section .visual img {
+  margin-left: auto;
+}
+/* End Hero Section */
 
 .banner-icon{
     height: 100%;
     width: 15%;
 }
-
+.banner-text{
+  color: #fff;
+}
 /* Restaurant Menu */
 .category {
     list-style: none;
@@ -100,3 +95,106 @@
     font-weight: 500;
   }
   /* End Restaurant Menu */
+
+
+
+
+
+
+.search {
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 5px
+}
+
+.search-1 {
+    position: relative;
+    width: 100%
+}
+
+.search-1 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 34px;
+    padding-right: 10px;
+    border-right: 2px solid #eee
+}
+
+.search-1 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-1 i {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    font-size: 24px;
+    color: #eee
+}
+
+::placeholder {
+    color: #eee;
+    opacity: 1
+}
+
+.search-2 {
+    position: relative;
+    width: 100%
+}
+
+.search-2 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 100px
+}
+
+.search-2 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-2 i {
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    font-size: 24px;
+    color: #eee
+}
+
+.search-2 button {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    border: none;
+    height: 45px;
+    background-color: red;
+    color: #fff;
+    width: 90px;
+    border-radius: 4px
+}
+
+@media (max-width:800px) {
+    .search-1 input {
+        border-right: none;
+        border-bottom: 1px solid #eee
+    }
+
+    .search-2 i {
+        left: 4px
+    }
+
+    .search-2 input {
+        padding-left: 34px
+    }
+
+    .search-2 button {
+        height: 37px;
+        top: 5px
+    }
+}
