@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Icon } from 'ionicons/dist/types/icon/icon';
+import {  RouterLink,  RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

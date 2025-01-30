@@ -1,9 +1,11 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, TemplateRef } from '@angular/core';
+import { FooterComponent } from "../shared-components/footer/footer.component";
+import { HeaderComponent } from '../shared-components/header/header.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [],
+  imports: [HeaderComponent,FooterComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
