@@ -1,19 +1,21 @@
-<div class="row">
+<div class="signup-section">
+  <br><br><br><br>
+  <div class="row pt-4">
     <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
       <div class="card auth">
         <div class="card-body auth-card">
           <div class="auth-avatar">
-            <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+            <img src="../../../assets/images/banner.jpg" alt="user" class="user-image">
           </div>
           <form (submit)="login(userData)">
-            <div class="form-group">
-              <label for="email">Email : </label>
-              <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="userData.email">
+            <div class="form-group pt-3 mt-3">
+              <input type="text" name="email" class="form-control login-form" placeholder="Email"
+                [(ngModel)]="userData.email">
             </div>
-            <div class="form-group">
-              <label for="password">Password : </label>
-              <input type="password" name="password" class="form-control" placeholder="********" [(ngModel)]="userData.password">
-              <div class="text-right forget-pass">
+            <div class="form-group pt-2 mt-2">
+              <input type="password" name="password" class="form-control login-form" placeholder="Password"
+                [(ngModel)]="userData.password">
+              <div class="text-right forget-pass mt-1">
                 <a routerLink="/forget-password">Forget Password ?</a>
               </div>
             </div>
@@ -22,11 +24,11 @@
             </div>
           </form>
           <div class="text-center sign-up">
-            Don`t have an account ? <a routerLink="/registration">Sign Up</a> hera.
+            Don`t have an account ? <a routerLink="/registration">Sign Up</a> here.
           </div>
-          
-          
         </div>
       </div>
     </div>
   </div>
+  <br><br><br><br><br><br><br><br>
+</div>
