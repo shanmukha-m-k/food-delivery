@@ -393,3 +393,225 @@
     ></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
+import { MenuItem } from '../../Model/menu-item.model';
+
+@Component({
+  selector: 'app-menu-carousel',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './menu-carousel.component.html',
+  styleUrl: './menu-carousel.component.scss'
+})
+export class MenuCarouselComponent  implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('carouselWrapper') carouselWrapper!: ElementRef;
+  categories: string[] = ["All", "Appetizers", "Main Courses", "Desserts", "Drinks"];
+  selectedCategory: string = "All";
+  products: MenuItem[] = [
+    {
+      id: 1,
+      name: "Premium Wireless Headphones",
+      price: 299.99,
+      discount: 15,
+      rating: 4.5,
+      description: "High-quality wireless headphones with noise cancellation",
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+      category: "Main Courses",
+      isVegetarian: true,
+      isVegan: false,
+      isGlutenFree: false
+    },
+    {
+      id: 2,
+      name: "Smart Watch Pro",
+      price: 199.99,
+      rating: 4.8,
+      description: "Advanced smartwatch with health monitoring features",
+      image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12",
+      category: "Appetizers",
+      isVegetarian: true,
+      isVegan: false,
+      isGlutenFree: false
+    },
+    {
+      id: 3,
+      name: "Wireless Gaming Mouse",
+      price: 79.99,
+      discount: 20,
+      rating: 4.3,
+      description: "Ergonomic gaming mouse with RGB lighting",
+      image: "https://images.unsplash.com/photo-1527814050087-3793815479db",
+      category: "Appetizers",
+      isVegetarian: true,
+      isVegan: false,
+      isGlutenFree: false
+    },
+    {
+      id: 4,
+      name: "4K Ultra HD Camera",
+      price: 599.99,
+      rating: 4.7,
+      description: "Professional-grade camera with advanced features",
+      image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32",
+      category: "Drinks",
+      isVegetarian: true,
+      isVegan: false,
+      isGlutenFree: false
+    }
+  ];
+
+  translateX: number = 0;
+  slideWidth: number = 320;
+  currentIndex: number = 0;
+  isTransitioning: boolean = false;
+  autoPlayInterval: any;
+  touchStartX: number = 0;
+  touchMoveX: number = 0;
+  selectedProduct: MenuItem | null = null;
+
+  get filteredMenuItems(): MenuItem[] {
+    return this.selectedCategory === "All"
+      ? this.products
+      : this.products.filter(item => item.category === this.selectedCategory);
+  }
+
+  get isLastSlide(): boolean {
+    return this.currentIndex >= this.filteredMenuItems.length - 3;
+  }
+
+  ngOnInit() {
+    this.startAutoPlay();
+  }
+
+  ngAfterViewInit() {
+    this.updateSlideWidth();
+    window.addEventListener('resize', this.updateSlideWidth.bind(this));
+  }
+
+  ngOnDestroy() {
+    this.stopAutoPlay();
+    window.removeEventListener('resize', this.updateSlideWidth.bind(this));
+  }
+
+  updateSlideWidth() {
+    if (window.innerWidth <= 480) {
+      this.slideWidth = 220;
+    } else if (window.innerWidth <= 768) {
+      this.slideWidth = 270;
+    } else {
+      this.slideWidth = 320;
+    }
+    this.updateTranslate();
+  }
+
+  startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+    }
+  }
+
+  previousSlide() {
+    if (this.isTransitioning) return;
+    this.currentIndex--;
+    if (this.currentIndex < 0) {
+      this.currentIndex = this.products.length - 1;
+    }
+    this.updateTranslate();
+  }
+
+  nextSlide() {
+    if (this.isLastSlide) return;
+    if (this.isTransitioning) return;
+    this.currentIndex++;
+    if (this.currentIndex >= this.products.length) {
+      this.currentIndex = 0;
+    }
+    this.updateTranslate();
+  }
+
+  updateTranslate() {
+    this.isTransitioning = true;
+    this.translateX = -this.currentIndex * this.slideWidth;
+    setTimeout(() => {
+      this.isTransitioning = false;
+    }, 300);
+  }
+
+  onTouchStart(event: TouchEvent) {
+    this.stopAutoPlay();
+    this.touchStartX = event.touches[0].clientX;
+    this.touchMoveX = this.touchStartX;
+  }
+
+  onTouchMove(event: TouchEvent) {
+    this.touchMoveX = event.touches[0].clientX;
+    const diff = this.touchMoveX - this.touchStartX;
+    this.translateX = -this.currentIndex * this.slideWidth + diff;
+  }
+
+  onTouchEnd() {
+    const diff = this.touchMoveX - this.touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        this.previousSlide();
+      } else {
+        this.nextSlide();
+      }
+    } else {
+      this.updateTranslate();
+    }
+    this.startAutoPlay();
+  }
+  selectCategory(category: string): void {
+    this.selectedCategory = category;
+    this.currentIndex = 0;
+    this.updateTranslateX();
+  }
+
+  previous(): void {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.updateTranslateX();
+    }
+  }
+
+  next(): void {
+    if (!this.isLastSlide) {
+      this.currentIndex++;
+      this.updateTranslateX();
+    }
+  }
+
+  updateTranslateX(): void {
+    const itemWidth = window.innerWidth <= 480 ? 100 : window.innerWidth <= 768 ? 50 : 33.333;
+    this.translateX = -(this.currentIndex * itemWidth);
+  }
+
+
+}

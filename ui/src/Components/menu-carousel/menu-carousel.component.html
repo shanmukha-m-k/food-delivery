@@ -1,0 +1,39 @@
+<div class="restaurant-menu-carousel">
+  <div class="row">
+    <div class="col-6">
+      <title class="carousel-text">
+        Order our best food options
+      </title>
+
+    </div>
+    <div class="col-6 carousel-control">
+      <button class="nav-btn prev pr-1" (click)="previous()" [disabled]="currentIndex === 0">&lt;</button>
+      &nbsp;
+      <button class="nav-btn next" (click)="next()" [disabled]="isLastSlide">&gt;</button>
+    </div>
+  </div>
+  <div class="carousel-container">
+
+
+    <div class="menu-items-container" (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)"
+      (touchend)="onTouchEnd()">
+      <div class="menu-items" [style.transform]="'translateX(' + translateX + 'px)'">
+        <div *ngFor="let item of filteredMenuItems" class="menu-item">
+          <button class="btn-tree">
+            <img [src]="item.image1" [alt]="item.name" class="img-tree" loading="lazy" (error)="handleImageError($event)">
+          </button>
+          <h3>{{ item.name }}</h3>
+        </div>
+      </div>
+      <div class="menu-items" [style.transform]="'translateX(' + translateX + 'px)'">
+        <div *ngFor="let item of filteredMenuItems" class="menu-item">
+          <div class="item-image">
+            <img [src]="item.image2" [alt]="item.name" loading="lazy" (error)="handleImageError($event)">
+          </div>
+          <h3>{{ item.name }}</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
