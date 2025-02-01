@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Pizza",
+        "image": "../assets/images/carousel-image/pizza.jpg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "Biryani",
+        "image": "../assets/images/carousel-image/biryani.jpg",
+        "category": "Main Courses"
+    },
+    {
+        "name": "Burger",
+        "image": "../assets/images/carousel-image/burger.jpeg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "North Indian",
+        "image": "../assets/images/carousel-image/northIndian.jpg",
+        "category": "Main Courses"
+    },
+    {
+        "name": "Chinese",
+        "image": "../assets/images/carousel-image/chinese.jpg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "Cake",
+        "image": "../assets/images/carousel-image/cake.jpg",
+        "category": "Dessert"
+    },
+    {
+        "name": "South Indian",
+        "image": "../assets/images/carousel-image/southIndian.jpg",
+        "category": "Main Courses"
+    }
+]

@@ -4,36 +4,39 @@
       <title class="carousel-text">
         Order our best food options
       </title>
-
     </div>
     <div class="col-6 carousel-control">
-      <button class="nav-btn prev pr-1" (click)="previous()" [disabled]="currentIndex === 0">&lt;</button>
+      <button class="nav-btn prev pr-1" (click)="previous()" [disabled]="currentIndex === 0">
+        <box-icon class="carousel-icon" name='left-arrow-alt' animation='tada' ></box-icon></button>
       &nbsp;
-      <button class="nav-btn next" (click)="next()" [disabled]="isLastSlide">&gt;</button>
+      <button class="nav-btn next" (click)="next()" [disabled]="isLastSlide">
+        <box-icon class="carousel-icon" name='right-arrow-alt' animation='tada' ></box-icon></button>
     </div>
   </div>
   <div class="carousel-container">
-
-
     <div class="menu-items-container" (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)"
       (touchend)="onTouchEnd()">
-      <div class="menu-items" [style.transform]="'translateX(' + translateX + 'px)'">
-        <div *ngFor="let item of filteredMenuItems" class="menu-item">
-          <button class="btn-tree">
-            <img [src]="item.image1" [alt]="item.name" class="img-tree" loading="lazy" (error)="handleImageError($event)">
+      <div class="menu-items"  [style.transform]="'translateX(' + translateX + 'px)'">
+        <div *ngFor="let item of firstFilteredMenuItems" class="menu-item" (click)="selectedMenuItem(item)">
+          <button class="btn-tree" >
+            <img [src]="item.image" [alt]="item.name" class="img-tree" loading="eager"
+              (error)="handleImageError($event)">
           </button>
-          <h3>{{ item.name }}</h3>
+          <div class="item-name">
+            <span>{{ item.name }}</span>
+          </div>
         </div>
       </div>
       <div class="menu-items" [style.transform]="'translateX(' + translateX + 'px)'">
-        <div *ngFor="let item of filteredMenuItems" class="menu-item">
-          <div class="item-image">
-            <img [src]="item.image2" [alt]="item.name" loading="lazy" (error)="handleImageError($event)">
+        <div *ngFor="let item of secondFilteredMenuItems" class="menu-item">
+          <button class="btn-tree" (click)="selectedMenuItem(item)">
+            <img [src]="item.image" [alt]="item.name" class="img-tree" loading="eager"
+              (error)="handleImageError($event)">
+          </button>
+          <div class="item-name">
+            <span>{{ item.name }}</span>
           </div>
-          <h3>{{ item.name }}</h3>
         </div>
       </div>
     </div>
-
   </div>
-</div>

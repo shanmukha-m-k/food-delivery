@@ -13,3 +13,9 @@ export interface MenuItem {
   isVegan: boolean;
   isGlutenFree: boolean;
 }
+
+export interface MenuItemCarousel{
+  name: string;
+  image: string;
+  category:string;
+}

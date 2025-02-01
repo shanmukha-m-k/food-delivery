@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Kebab",
+        "image":  "../assets/images/carousel-image/kebab.jpg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "Pastry",
+        "image":  "../assets/images/carousel-image/pastry.jpg",
+        "category": "Dessert"
+    },
+    {
+        "name": "Shawarama",
+        "image":  "../assets/images/carousel-image/shawarama.jpg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "Dosa",
+        "image":  "../assets/images/carousel-image/dosa.jpg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "Noodles",
+        "image":  "../assets/images/carousel-image/noodles.jpg",
+        "category": "Appetizer"
+    },
+    {
+        "name": "Pure Veg",
+        "image":  "../assets/images/carousel-image/pureveg.jpg",
+        "category": "Main Courses"
+    },
+    {
+        "name": "Momo",
+        "image":  "../assets/images/carousel-image/momo.jpeg",
+        "category": "Appetizer"
+    }
+]

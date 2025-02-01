@@ -8,7 +8,6 @@
   position: relative;
   display: flex;
   align-items: center;
-
 }
 
 .menu-items-container {
@@ -27,10 +26,6 @@
   background: white;
   overflow: hidden;
   transition: transform 0.3s ease;
-}
-
-.menu-item:hover {
-  transform: translateY(-5px);
 }
 
 .item-image {
@@ -55,7 +50,7 @@
 }
 
 .nav-btn {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(2, 6, 12, 0.15);
   color: white;
   border: none;
   border-radius: 50%;
@@ -96,16 +91,27 @@
   width: 144px;
   height: 144px;
   object-fit: cover;
-
 }
-.btn-tree{
+.btn-tree {
   width: 144px;
   min-width: 144px;
   height: 180px;
   min-height: 180px;
+  border: none;
+  background: none;
 }
-.img-tree{
+.img-tree {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
+  border-radius: 50%;
+}
+.item-name {
+  padding-left: 40px;
+}
+.item-name:hover {
+  cursor: pointer;
+}
+.carousel-icon {
+  margin-top: 7px;
 }
