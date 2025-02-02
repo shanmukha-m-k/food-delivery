@@ -1,0 +1,54 @@
+<div class="restaurant-menus">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <header class="menu-header">
+                    <h1>Bite Buddy</h1>
+                    <p class="tagline">Eat without worries!</p>
+                    <div class="search-filters">
+                        <input type="text" [(ngModel)]="searchTerm" placeholder="Search dishes..."
+                            class="search-input" />
+                        <select [(ngModel)]="selectedCategory" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+                        </select>
+                        <div class="dietary-filters">
+                            <label><input type="checkbox" [(ngModel)]="filters.vegetarian"> Vegetarian</label>
+                            <label><input type="checkbox" [(ngModel)]="filters.vegan"> Vegan</label>
+                            <label><input type="checkbox" [(ngModel)]="filters.glutenFree"> Gluten-Free</label>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="col-md-8">
+                <section *ngFor="let category of displayedCategories" class="menu-section">
+                    <h2>{{category}}</h2>
+                    <div class="menu-grid">
+                        <div *ngFor="let item of filterMenuItems(category)" class="menu-item"
+                            >
+                            <div class="item-image">
+                                <img [src]="item.imageUrl" [alt]="item.name" loading="lazy"
+                                    (error)="handleImageError($event)">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3>{{item.name}}</h3>
+                                <p class="description">{{item.description}}</p>
+                                <div class="price-tags">
+                                    <span class="price">${{item.price}}</span>
+                                    <div class="dietary-tags">
+                                        <span *ngIf="item.dietaryTags.includes('vegetarian')" class="tag veg">V</span>
+                                        <span *ngIf="item.dietaryTags.includes('vegan')" class="tag vegan">VG</span>
+                                        <span *ngIf="item.dietaryTags.includes('gluten-free')" class="tag gf">GF</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between mt-2">
+                                    <button class="menu-button">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
