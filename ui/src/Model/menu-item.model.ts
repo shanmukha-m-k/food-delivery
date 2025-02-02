@@ -12,13 +12,13 @@ export interface MenuItems {
   isGlutenFree: boolean;
 }
 
-export interface MenuItemCarousel{
+export interface MenuItemCarousel {
   name: string;
   image: string;
-  category:string;
+  category: string;
 }
 
-export  interface MenuItem {
+export interface MenuItem {
   id: number;
   name: string;
   description: string;

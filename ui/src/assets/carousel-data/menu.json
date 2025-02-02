@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 12.99,
+    "category": "Appetizers",
+    "dietaryTags": [
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/pizza.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Biryani",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 22.15,
+    "category": "Main Courses",
+    "dietaryTags": [
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/biryani.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Burger",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 22.15,
+    "category": "Appetizers",
+    "dietaryTags": [
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/burger.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "North Indian",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 22.15,
+    "category": "Main Courses",
+    "dietaryTags": [
+      "vegetarian",
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/northIndian.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Chinese",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 22.15,
+    "category": "Appetizers",
+    "dietaryTags": [
+      "vegetarian",
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/chinese.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Cake",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 32.15,
+    "category": "Desserts",
+    "dietaryTags": [
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/cake.jpg"
+  },
+  {
+    "id": 7,
+    "name": "South Indian",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 28.15,
+    "category": "Main Courses",
+    "dietaryTags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/southIndian.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Momo",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 16.15,
+    "category": "Desserts",
+    "dietaryTags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/momo.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Pastry",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 52.15,
+    "category": "Desserts",
+    "dietaryTags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/pastry.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Coke",
+    "description": "Fresh mozzarella, tomatoes, and basil with balsamic glaze",
+    "price": 12.15,
+    "category": "Beverages",
+    "dietaryTags": [
+      "vegan",
+      "gluten-free"
+    ],
+    "imageUrl": "../assets/images/carousel-image/coke.png"
+  }
+]

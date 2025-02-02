@@ -1,9 +1,9 @@
-import {  Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { MenuItem, MenuItemCarousel } from '../../Model/menu-item.model';
 import { Subject } from 'rxjs';
-import firstMenuItem from '../../assets/carousel-data/first-carousel.json';  
+import firstMenuItem from '../../assets/carousel-data/first-carousel.json';
 import secondMenuItem from '../../assets/carousel-data/second-carousel.json'
 
 
@@ -12,11 +12,11 @@ import secondMenuItem from '../../assets/carousel-data/second-carousel.json'
   selector: 'app-menu-carousel',
   standalone: true,
   imports: [CommonModule],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './menu-carousel.component.html',
   styleUrl: './menu-carousel.component.scss'
 })
-export class MenuCarouselComponent  implements  OnInit, OnDestroy {
+export class MenuCarouselComponent implements OnInit, OnDestroy {
   selectedCategory: string = "All";
   currentIndex: number = 0;
   translateX: number = 0;
@@ -24,12 +24,12 @@ export class MenuCarouselComponent  implements  OnInit, OnDestroy {
   touchDeltaX: number = 0;
   slideWidth: number = 300;
   isTransitioning: boolean = false;
-  autoPlayInterval:any;
-  item:any;
+  autoPlayInterval: any;
+  item: any;
   private destroy$ = new Subject<void>();
-  
-  firstMenuItems:MenuItemCarousel[]=firstMenuItem;
-  secondMenuItems:MenuItemCarousel[]=secondMenuItem;
+
+  firstMenuItems: MenuItemCarousel[] = firstMenuItem;
+  secondMenuItems: MenuItemCarousel[] = secondMenuItem;
 
 
 
@@ -37,22 +37,22 @@ export class MenuCarouselComponent  implements  OnInit, OnDestroy {
   get firstFilteredMenuItems(): MenuItemCarousel[] {
     return this.selectedCategory === "All"
       ? this.firstMenuItems
-      : this.firstMenuItems.filter(item => item.category === this.selectedCategory) ;
+      : this.firstMenuItems.filter(item => item.category === this.selectedCategory);
   }
   get secondFilteredMenuItems(): MenuItemCarousel[] {
     return this.selectedCategory === "All"
       ? this.secondMenuItems
-      : this.secondMenuItems.filter(item => item.category === this.selectedCategory) ;
+      : this.secondMenuItems.filter(item => item.category === this.selectedCategory);
   }
 
   get isLastSlide(): boolean {
-    return this.currentIndex >= this.firstFilteredMenuItems.length-this.firstMenuItems.length+1;
+    return this.currentIndex >= this.firstFilteredMenuItems.length - this.firstMenuItems.length + 1;
   }
 
   ngOnInit(): void {
   }
 
-  selectedMenuItem(item:any):any{
+  selectedMenuItem(item: any): any {
     console.log(item);
   }
 
@@ -120,7 +120,7 @@ export class MenuCarouselComponent  implements  OnInit, OnDestroy {
 
   handleImageError(event: Event): void {
     const imgElement = event.target as HTMLImageElement;
-    imgElement.src = "https://images.unsplash.com/photo-1495195134817-aeb325a55b65";
+    imgElement.src = "../../assets/images/carousel-image/pastry.jpg";
   }
 
 }

@@ -24,8 +24,7 @@
                 <section *ngFor="let category of displayedCategories" class="menu-section">
                     <h2>{{category}}</h2>
                     <div class="menu-grid">
-                        <div *ngFor="let item of filterMenuItems(category)" class="menu-item"
-                            >
+                        <div *ngFor="let item of filterMenuItems(category)" class="menu-item">
                             <div class="item-image">
                                 <img [src]="item.imageUrl" [alt]="item.name" loading="lazy"
                                     (error)="handleImageError($event)">
@@ -52,3 +51,5 @@
         </div>
     </div>
 </div>
+
+<app-footer></app-footer>
