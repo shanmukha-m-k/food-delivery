@@ -1,64 +1,106 @@
-/* Menu */
-nav {
-    height: 80px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    background: #ff5200;
-    box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.22);
-    z-index: 22;
-  }
-  
-  label.logo {
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 30px;
-    font-weight: 700;
-  }
-  
-  nav ul {
-    float: right;
-    margin-right: 20px;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-  }
-  
-  nav ul li a {
-    font-size: 18px;
-    padding: 7px 13px;
-    text-decoration: none;
-    color: #ffffff;
-  }
-  
-  .menu a.active,
-  .menu a:hover {
-    border-bottom: 2px solid var(--clr-primary);
-    transition: 0.3s;
-  }
-  
-  .checkbtn {
-    font-size: 30px;
-    color: #fff;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-  }
-  
-  #check {
-    display: none;
+:host {
+  display: block;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+  padding: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  color: #2c3e50;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.navbar-brand span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #e67e22;
+}
+
+.nav-link.active {
+  color: #e67e22;
+  font-weight: 600;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  color: #2c3e50;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #e67e22;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+nav ul {
+  float: right;
+  margin-right: 50px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 20px;
+  margin: 0 15px;
+}
+
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
   }
 
-  .logo a{
-    text-decoration: none!important;
-    color: #ffffff;
+  .nav-item {
+    margin: 0.5rem 0;
   }
-  .logo a:hover{
-    border-bottom: none !important;
-  }
-  /* End Menu */
+
+ 
+
+ 
+}
