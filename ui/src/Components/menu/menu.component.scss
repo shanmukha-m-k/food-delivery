@@ -1,0 +1,29 @@
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  
+  .quantity-controls button {
+    background: #f39c12;
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .quantity-controls button:hover {
+    background: #e67e22;
+  }
+  
+  .quantity-controls input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }

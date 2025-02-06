@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SharedComponentsRoutingModule } from './shared-components-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Router } from '@angular/router';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import { FooterComponent } from './footer/footer.component';
     CommonModule,
     SharedComponentsRoutingModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FontAwesomeModule,
+    
   ],
   exports: [HeaderComponent,FooterComponent],
 })

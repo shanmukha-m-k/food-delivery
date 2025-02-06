@@ -9,29 +9,27 @@
     </button>
     <div class="collapse navbar-collapse" [class.show]="!isCollapsed">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
+        <li class="nav-item"  >
           <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="toggleMenu()" role="button">Menu</a>
-          <ul class="dropdown-menu" [class.show]="showMenu">
-            <li><a class="dropdown-item" routerLink="/menu/appetizers">Appetizers</a></li>
-            <li><a class="dropdown-item" routerLink="/menu/main-courses">Main Courses</a></li>
-            <li><a class="dropdown-item" routerLink="/menu/desserts">Desserts</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link"   routerLink="menu" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+          <a class="nav-link" routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="/reservations">Reservations</a>
+          <a class="nav-link " routerLink="registration" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+          <a class="nav-link " routerLink="cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+
+            <box-icon name='cart' color='#e67e22' ></box-icon> 
+                       <div class="badge" [attr.value]="value">&#xf07a;</div>
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
 

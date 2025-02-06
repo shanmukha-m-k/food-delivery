@@ -1,0 +1,66 @@
+<div class="cart-container">
+    <div class="cart-header">
+      <h1>Your Cart</h1>
+      <p *ngIf="cartData.length > 0">{{ cartData.length }} items in your cart</p>
+    </div>
+  
+    <div class="cart-content" *ngIf="cartData.length > 0; else emptyCart">
+      <div class="cart-items">
+        <div class="cart-item" *ngFor="let item of cartData">
+          <img [src]="item.image" [alt]="item.name" loading="lazy">
+          <div class="item-details">
+            <h3>{{ item.name }}</h3>
+            <p class="price">${{ item.price.toFixed(2) }}</p>
+            <div class="quantity-controls">
+              <button (click)="decrementQuantity(item)" [disabled]="item.quantity <= 1">-</button>
+              <input type="number" [value]="item.quantity" (change)="updateQuantity($event, item)" min="1">
+              <button (click)="incrementQuantity(item)">+</button>
+            </div>
+            <button class="remove-btn" (click)="removeItem(item)">Remove</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>${{ subtotal.toFixed(2) }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (8%)</span>
+          <span>${{ tax.toFixed(2) }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>${{ deliveryFee.toFixed(2) }}</span>
+        </div>
+        <div class="discount-section">
+          <input type="text" [(ngModel)]="discountCode" placeholder="Enter discount code">
+          <button (click)="applyDiscount()">Apply</button>
+        </div>
+        <div class="total">
+          <span>Total</span>
+          <span>${{ total.toFixed(2) }}</span>
+        </div>
+        <button class="checkout-btn" (click)="checkout()" [disabled]="!cartItems.length">Proceed to Checkout</button>
+      </div>
+    </div>
+  
+    <ng-template #emptyCart>
+      <div class="empty-cart">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Empty cart" loading="lazy">
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added anything to your cart yet</p>
+        <button (click)="goToMenu()">Browse Menu</button>
+      </div>
+    </ng-template>
+  
+    <div class="confirmation-modal" *ngIf="showConfirmation">
+      <div class="modal-content">
+        <h2>Order Confirmed!</h2>
+        <p>Estimated delivery time: {{ estimatedDeliveryTime }}</p>
+        <button (click)="closeConfirmation()">Close</button>
+      </div>
+    </div>
+  </div>

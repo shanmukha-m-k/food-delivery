@@ -26,4 +26,5 @@ export interface MenuItem {
   category: string;
   dietaryTags: string[];
   imageUrl: string;
+  quantity:number;
 }

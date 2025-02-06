@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import menuGrid from '../../assets/carousel-data/menu.json';
 import { FooterComponent } from "../shared-components/footer/footer.component";
+import { AddToCartService } from '../../Services/add-to-cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -15,6 +17,7 @@ import { FooterComponent } from "../shared-components/footer/footer.component";
 })
 export class MenuComponent implements OnInit {
   menuGridItems: MenuItem[] = menuGrid;
+  cartItems: MenuItem[]=[];
   categories: string[] = ["Appetizers", "Main Courses", "Desserts", "Beverages"];
   searchTerm: string = "";
   selectedCategory: string = "all";
@@ -24,10 +27,35 @@ export class MenuComponent implements OnInit {
     vegan: false,
     glutenFree: false
   };
+  subtotal: number = 0;
+  sendData:any;
 
-  constructor() { }
-
+  constructor(private _addToCartService: AddToCartService,private _router:Router) { }
+  passDataToService(passObjects:any) {
+    this.sendData=passObjects;
+    this._addToCartService.changeParam(passObjects);
+    this._router.navigate(['/cart']);
+ }
   ngOnInit(): void { }
+
+  calculateTotals(): void {
+    this.subtotal = this.cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+  }
+
+  incrementQuantity(item: any): void {
+    item.quantity++;
+    this.calculateTotals();
+  }
+
+  decrementQuantity(item: any): void {
+    if (item.quantity > 1) {
+      item.quantity--;
+      this.calculateTotals();
+    }
+  }
 
   get displayedCategories(): string[] {
     if (this.selectedCategory === "all") {
