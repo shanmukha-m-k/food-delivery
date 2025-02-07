@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
 import { MenuItem } from '../../Model/menu-item.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,11 +6,12 @@ import menuGrid from '../../assets/carousel-data/menu.json';
 import { FooterComponent } from "../shared-components/footer/footer.component";
 import { AddToCartService } from '../../Services/add-to-cart.service';
 import { Router } from '@angular/router';
+import { HeaderComponent } from "../shared-components/header/header.component";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, FormsModule, FooterComponent],
+  imports: [CommonModule, FormsModule, FooterComponent, HeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
@@ -21,22 +22,24 @@ export class MenuComponent implements OnInit {
   categories: string[] = ["Appetizers", "Main Courses", "Desserts", "Beverages"];
   searchTerm: string = "";
   selectedCategory: string = "all";
-  selectedItem: MenuItem | null = null;
+  selectedItem: MenuItem | null = null; 
   filters = {
     vegetarian: false,
     vegan: false,
     glutenFree: false
   };
   subtotal: number = 0;
-  sendData:any;
+  
 
   constructor(private _addToCartService: AddToCartService,private _router:Router) { }
   passDataToService(passObjects:any) {
-    this.sendData=passObjects;
-    this._addToCartService.changeParam(passObjects);
-    this._router.navigate(['/cart']);
+this._addToCartService.changeParam  
+    (passObjects);
+this._addToCartService.totalCartQuantitiy(passObjects);
  }
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this._addToCartService.value;
+  }
 
   calculateTotals(): void {
     this.subtotal = this.cartItems.reduce(
@@ -90,4 +93,5 @@ export class MenuComponent implements OnInit {
   handleImageError(event: any): void {
     event.target.src = "../../assets/images/carousel-image/pastry.jpg";
   }
+ 
 }

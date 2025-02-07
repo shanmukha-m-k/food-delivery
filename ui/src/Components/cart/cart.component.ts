@@ -31,6 +31,8 @@ export class CartComponent implements OnInit {
   showConfirmation: boolean = false;
   estimatedDeliveryTime: string = "30-45 minutes";
 
+  tree:any;
+
   constructor(private _addToCartService: AddToCartService,private _router:Router) { }
 
   ngOnInit(): void {
@@ -100,11 +102,13 @@ export class CartComponent implements OnInit {
 
   closeConfirmation(): void {
     this.showConfirmation = false;
-    this.cartItems = [];
+
     this.calculateTotals();
+    this._router.navigate(['/']);
   }
 
   goToMenu(): void {
     this._router.navigate(["/menu"]);
   }
+ 
 }

@@ -8,7 +8,7 @@
     "dietaryTags": [
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/pizza.jpg",
+    "image": "../assets/images/carousel-image/pizza.jpg",
     "quantity":1
   },
   {
@@ -20,7 +20,7 @@
     "dietaryTags": [
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/biryani.jpg",
+    "image": "../assets/images/carousel-image/biryani.jpg",
     "quantity":1
   },
   {
@@ -32,7 +32,7 @@
     "dietaryTags": [
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/burger.jpeg",
+    "image": "../assets/images/carousel-image/burger.jpeg",
     "quantity":1
   },
   {
@@ -45,7 +45,7 @@
       "vegetarian",
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/northIndian.jpg",
+    "image": "../assets/images/carousel-image/northIndian.jpg",
     "quantity":1
   },
   {
@@ -58,7 +58,7 @@
       "vegetarian",
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/chinese.jpg",
+    "image": "../assets/images/carousel-image/chinese.jpg",
     "quantity":1
   },
   {
@@ -70,7 +70,7 @@
     "dietaryTags": [
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/cake.jpg",
+    "image": "../assets/images/carousel-image/cake.jpg",
     "quantity":1
   },
   {
@@ -83,7 +83,7 @@
       "vegan",
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/southIndian.jpg",
+    "image": "../assets/images/carousel-image/southIndian.jpg",
     "quantity":1
   },
   {
@@ -96,7 +96,7 @@
       "vegan",
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/momo.jpeg",
+    "image": "../assets/images/carousel-image/momo.jpeg",
     "quantity":1
   },
   {
@@ -109,7 +109,7 @@
       "vegan",
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/pastry.jpg",
+    "image": "../assets/images/carousel-image/pastry.jpg",
     "quantity":1
   },
   {
@@ -122,7 +122,7 @@
       "vegan",
       "gluten-free"
     ],
-    "imageUrl": "../assets/images/carousel-image/coke.png",
+    "image": "../assets/images/carousel-image/coke.png",
     "quantity":1
   }
 ]

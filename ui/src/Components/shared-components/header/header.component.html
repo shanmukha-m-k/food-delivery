@@ -13,19 +13,19 @@
           <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"   routerLink="menu" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Menu</a>
+          <a class="nav-link"   routerLink="/menu" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >About</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="registration" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Sign Up</a>
+          <a class="nav-link " routerLink="/registration" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link " routerLink="/cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <box-icon name='cart' color='#e67e22' ></box-icon> 
-                       <div class="badge" [attr.value]="value">&#xf07a;</div>
+                       <div class="badge" *ngIf="value!=0" [attr.value]="value">&#xf07a;</div>
           </a>
         </li>
       </ul>

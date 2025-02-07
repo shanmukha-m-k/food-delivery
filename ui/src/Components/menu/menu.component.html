@@ -1,10 +1,11 @@
+<app-header></app-header>
+<br><br><br><br>
+
 <div class="restaurant-menus">
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4">
                 <header class="menu-header">
-                    <h1>Bite Buddy</h1>
-                    <p class="tagline">Eat without worries!</p>
                     <div class="search-filters">
                         <input type="text" [(ngModel)]="searchTerm" placeholder="Search dishes..."
                             class="search-input" />
@@ -26,7 +27,7 @@
                     <div class="menu-grid">
                         <div *ngFor="let item of filterMenuItems(category)" class="menu-item">
                             <div class="item-image">
-                                <img [src]="item.imageUrl" [alt]="item.name" loading="lazy"
+                                <img [src]="item.image" [alt]="item.name" loading="lazy"
                                     (error)="handleImageError($event)">
                             </div>
                             <div class="menu-item-content">
